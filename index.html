@@ -1,10 +1,312 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>My Awesome Website</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alan Turing: A Pioneer of AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+            color: #334155;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .presentation-container {
+            width: 100%;
+            max-width: 900px;
+            background-color: #ffffff;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        .slide {
+            padding: 2.5rem;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            transition: opacity 0.5s ease-in-out;
+            min-height: 600px;
+        }
+        .slide.active {
+            display: flex;
+        }
+        .slide-content {
+            width: 100%;
+            max-width: 700px;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .slide-content h1, .slide-content h2 {
+            color: #1a202c;
+            font-weight: 700;
+        }
+        .slide-content h1 {
+            font-size: 3rem;
+        }
+        .slide-content h2 {
+            font-size: 2.25rem;
+        }
+        .slide-content p {
+            font-size: 1.125rem;
+            line-height: 1.6;
+        }
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .slide-button {
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            color: #ffffff;
+            background-color: #4f46e5;
+            border: 2px solid #4f46e5;
+            transition: all 0.2s ease-in-out;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .slide-button:hover {
+            background-color: #4338ca;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        }
+        .slide-button.outline {
+            background-color: transparent;
+            color: #4f46e5;
+        }
+        .slide-button.outline:hover {
+            background-color: #eef2ff;
+        }
+        .navigation-buttons {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding: 1.5rem 2.5rem;
+            border-top: 1px solid #e2e8f0;
+        }
+        .nav-btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            background-color: #6366f1;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .nav-btn:hover {
+            background-color: #4f46e5;
+        }
+        .nav-btn.hidden {
+            visibility: hidden;
+        }
+        .nav-btn:disabled {
+            background-color: #cbd5e1;
+            cursor: not-allowed;
+        }
+        .image-container {
+            width: 100%;
+            max-width: 400px;
+            margin-bottom: 1.5rem;
+        }
+        .image-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 1rem;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+        .resource-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            background-color: #10b981;
+            color: #ffffff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            transition: all 0.2s ease-in-out;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .resource-btn:hover {
+            background-color: #059669;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        }
+    </style>
 </head>
 <body>
-  <h1>Hello, World!</h1>
-  <p>Welcome to my first GitHub Pages website.</p>
+
+<div class="presentation-container">
+    
+    <!-- Slide 1: Title -->
+    <div id="slide-1" class="slide active">
+        <div class="slide-content">
+            <h1>Alan Turing: A Pioneer of AI</h1>
+            <p>An exploration of a life that shaped the digital world.</p>
+            <div class="image-container">
+                <img src="https://placehold.co/600x400/1e293b/ffffff?text=Alan+Turing" alt="Alan Turing portrait">
+            </div>
+            <a href="#slide-2" class="slide-button" onclick="showSlide(2)">Begin Presentation</a>
+        </div>
+    </div>
+
+    <!-- Slide 2: Early Life and Education -->
+    <div id="slide-2" class="slide">
+        <div class="slide-content">
+            <h2>Early Life and Education</h2>
+            <p>Born in London in 1912, Alan Turing showed an early passion for mathematics and science. He studied at Cambridge and later earned a Ph.D. from Princeton.</p>
+            <div class="image-container">
+                <img src="https://placehold.co/600x400/334155/ffffff?text=Young+Alan+Turing" alt="Young Alan Turing">
+            </div>
+            <div class="button-group">
+                <a href="https://www.youtube.com/watch?v=s5R-64bJ-48" target="_blank" class="resource-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.91 11.672a.375.375 0 0 1 0 .656l-5.601 3.194c-.381.218-.842-.047-.842-.441V8.771c0-.394.461-.659.842-.441l5.601 3.194Z" />
+                    </svg>
+                    Watch a short video
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 3: The Turing Machine -->
+    <div id="slide-3" class="slide">
+        <div class="slide-content">
+            <h2>The Turing Machine</h2>
+            <p>In 1936, Turing introduced the concept of the Turing machine, a theoretical device that became the blueprint for the modern computer.</p>
+            <div class="image-container">
+                <img src="https://placehold.co/600x400/475569/ffffff?text=Turing+Machine+Concept" alt="Illustration of a Turing machine">
+            </div>
+            <div class="button-group">
+                <a href="https://www.youtube.com/watch?v=dNRDvFj_67s" target="_blank" class="resource-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5V12m0 0V16.5m0-4.5h4.5m-4.5 0H7.5" />
+                    </svg>
+                    Learn more with a video
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 4: Bletchley Park and WWII -->
+    <div id="slide-4" class="slide">
+        <div class="slide-content">
+            <h2>A War Hero: Bletchley Park</h2>
+            <p>During World War II, Turing was instrumental in designing the **Bombe**, a machine that cracked the German Enigma code, a contribution that helped save countless lives and shorten the war.</p>
+            <div class="image-container">
+                <img src="https://placehold.co/600x400/64748b/ffffff?text=Enigma+Machine" alt="Image of an Enigma machine">
+            </div>
+            <div class="button-group">
+                <a href="https://www.theguardian.com/technology/2012/jun/18/alan-turing-enigma-machine-hero" target="_blank" class="resource-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                    </svg>
+                    Read more about the Enigma code
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 5: The Turing Test -->
+    <div id="slide-5" class="slide">
+        <div class="slide-content">
+            <h2>The Birth of AI: The Turing Test</h2>
+            <p>In his 1950 paper, Turing proposed the **Turing Test** to determine if a machine could exhibit intelligent behavior indistinguishable from a human. This test is a cornerstone of AI philosophy.</p>
+            <div class="image-container">
+                <img src="https://placehold.co/600x400/94a3b8/ffffff?text=Turing+Test+Diagram" alt="Diagram of the Turing Test">
+            </div>
+            <div class="button-group">
+                <a href="https://www.youtube.com/watch?v=3w9H1pA-xH8" target="_blank" class="resource-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9.163 21H5.838l-.65-5.096L12 10.975l7.662 4.929-.65 5.096h-3.325l-.65-5.096L12 10.975l-2.187 4.929Z" />
+                    </svg>
+                    Explore the Turing Test
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 6: Legacy and Modern AI -->
+    <div id="slide-6" class="slide">
+        <div class="slide-content">
+            <h2>Legacy and Influence on Modern AI</h2>
+            <p>Turing's vision laid the foundation for modern machine learning, natural language processing, and neural networks, which are at the heart of today's AI technologies.</p>
+            <div class="image-container">
+                <img src="https://placehold.co/600x400/cbd5e1/ffffff?text=Modern+AI+Illustration" alt="Illustration of modern AI concepts">
+            </div>
+            <div class="button-group">
+                <a href="https://www.youtube.com/watch?v=Zc0L-8q5d1M" target="_blank" class="resource-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 9.75v-4.5m0 4.5h-4.5m4.5 0h4.5m-4.5 0l-1.425 2.15C9.697 14.593 8.384 15 7.106 15H3.75a2.25 2.25 0 0 1-2.25-2.25V12A2.25 2.25 0 0 1 3.75 9.75h3.356c1.332 0 2.645-.407 3.753-1.15l1.424-2.15Z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m15 15 2.25 2.25m-2.25 2.25L15 15m0 0 2.25-2.25M12 9.75v4.5m0-4.5h-4.5m4.5 0h4.5m-4.5 0l-1.425 2.15C9.697 14.593 8.384 15 7.106 15H3.75a2.25 2.25 0 0 1-2.25-2.25V12A2.25 2.25 0 0 1 3.75 9.75h3.356c1.332 0 2.645-.407 3.753-1.15l1.424-2.15Z" />
+                    </svg>
+                    Watch a video on modern AI
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="navigation-buttons">
+        <button id="prevBtn" class="nav-btn" onclick="prevSlide()" disabled>Previous</button>
+        <button id="nextBtn" class="nav-btn" onclick="nextSlide()">Next</button>
+    </div>
+
+</div>
+
+<script>
+    const slides = document.querySelectorAll('.slide');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    let currentSlide = 0;
+
+    function showSlide(slideIndex) {
+        if (slideIndex < 1 || slideIndex > slides.length) return;
+
+        // Hide all slides
+        slides.forEach(slide => slide.classList.remove('active'));
+        
+        // Show the current slide
+        slides[slideIndex - 1].classList.add('active');
+        currentSlide = slideIndex;
+
+        // Update navigation button states
+        prevBtn.disabled = currentSlide === 1;
+        nextBtn.disabled = currentSlide === slides.length;
+    }
+
+    function nextSlide() {
+        if (currentSlide < slides.length) {
+            showSlide(currentSlide + 1);
+        }
+    }
+
+    function prevSlide() {
+        if (currentSlide > 1) {
+            showSlide(currentSlide - 1);
+        }
+    }
+
+    // Initial load
+    window.onload = () => showSlide(1);
+</script>
+
 </body>
 </html>
