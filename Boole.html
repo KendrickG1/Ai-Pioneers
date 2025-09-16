@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>George Boole: The Father of the Digital Age</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            color: #1f2937;
+        }
+        .slide {
+            display: none;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        .slide.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .btn {
+            @apply px-6 py-3 rounded-full font-bold text-white shadow-lg transition-all duration-300 transform hover:scale-105;
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen p-4 md:p-8">
+
+    <div id="presentation-container" class="bg-white rounded-3xl shadow-2xl p-6 md:p-12 w-full max-w-4xl mx-auto flex flex-col items-center">
+
+        <!-- Slides Container -->
+        <div id="slides" class="w-full">
+            
+            <!-- Slide 1: Title Slide -->
+            <div id="slide-1" class="slide active text-center flex flex-col items-center">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-blue-800 mb-4">George Boole: The Father of the Digital Age</h1>
+                <p class="text-lg md:text-xl text-gray-600 mb-8">Exploring the life and legacy of a mathematical pioneer.</p>
+                <div class="w-full h-64 md:h-96 bg-gray-200 rounded-2xl flex items-center justify-center overflow-hidden mb-6">
+                    <svg class="w-2/3 h-2/3 text-gray-400" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-2-12v2h4v-2h-4zm0 4v6h4v-6h-4zm4 8v2h-4v-2h4z"/>
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                    </svg>
+                </div>
+                <div class="mt-8">
+                    <button id="next-button" class="btn bg-blue-500 hover:bg-blue-600">Next</button>
+                </div>
+            </div>
+
+            <!-- Slide 2: Early Life -->
+            <div id="slide-2" class="slide text-center flex flex-col items-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-700 mb-4">A Self-Taught Genius</h2>
+                <p class="text-base md:text-lg text-gray-700 mb-6 max-w-2xl">Born in 1815, George Boole was a shoemaker's son who had little formal schooling. He was a brilliant self-taught learner who mastered multiple languages and advanced mathematics on his own. By age 19, he had opened his own school to support his family.</p>
+                <div class="w-full h-64 md:h-96 bg-gray-200 rounded-2xl flex items-center justify-center overflow-hidden mb-6">
+                    <svg class="w-2/3 h-2/3 text-gray-400" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21 5c-1.11-.35-2.36-.61-3.61-.79C16.14 4.02 14.07 4 12 4c-2.07 0-4.14.02-5.39.21-1.25.18-2.5.44-3.61.79-.82.26-1.5.89-1.92 1.76l-.16.34-.05.11-.06.13-.03.07-.02.05-.01.02-.01.02V18h20V6.26c-.4-.87-1.08-1.5-1.92-1.76zM12 18c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6zm0-10c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4z"/>
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Slide 3: Boolean Algebra -->
+            <div id="slide-3" class="slide text-center flex flex-col items-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-700 mb-4">The Laws of Thought</h2>
+                <p class="text-base md:text-lg text-gray-700 mb-6 max-w-2xl">In his groundbreaking work, Boole created "Boolean algebra," a system of logic using math. He used 1 for "true" and 0 for "false" and simple operations like AND, OR, and NOT to solve logical problems in an algebraic way. This made human reasoning calculable!</p>
+                <div class="flex flex-col items-center justify-center w-full h-64 md:h-96 bg-gray-200 rounded-2xl p-4 mb-6">
+                    <!-- Simple SVG representation of an AND gate -->
+                    <svg class="w-48 h-auto" viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
+                        <title>AND Gate</title>
+                        <path d="M10 10 L40 10 L40 50 L10 50 A30 30 0 0 1 10 10z" fill="white" stroke="currentColor" stroke-width="2"/>
+                        <circle cx="90" cy="30" r="10" fill="white" stroke="currentColor" stroke-width="2"/>
+                        <path d="M40 10 A30 30 0 0 1 40 50" fill="none" stroke="currentColor" stroke-width="2"/>
+                        <line x1="0" y1="20" x2="10" y2="20" stroke="currentColor" stroke-width="2"/>
+                        <line x1="0" y1="40" x2="10" y2="40" stroke="currentColor" stroke-width="2"/>
+                        <line x1="70" y1="30" x2="80" y2="30" stroke="currentColor" stroke-width="2"/>
+                        <text x="25" y="35" font-family="Arial" font-size="12" font-weight="bold" fill="currentColor">AND</text>
+                    </svg>
+                    <p class="text-sm text-gray-500 mt-2">A logic gate visual, a building block of computers.</p>
+                </div>
+                <a href="https://www.youtube.com/watch?v=AY1NDlKlPp4" target="_blank" class="btn bg-red-500 hover:bg-red-600 my-4">Watch a video on George Boole</a>
+            </div>
+
+            <!-- Slide 4: Contribution to AI -->
+            <div id="slide-4" class="slide text-center flex flex-col items-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-700 mb-4">The Logic of "Thinking Machines"</h2>
+                <p class="text-base md:text-lg text-gray-700 mb-6 max-w-2xl">Boole's work provided the first-ever framework for a machine to reason and make decisions. By using 1s and 0s to represent ideas, he created a system that could process information and draw conclusions, a crucial first step toward the idea of artificial intelligence.</p>
+                <div class="w-full h-64 md:h-96 bg-gray-200 rounded-2xl flex items-center justify-center overflow-hidden mb-6">
+                    <svg class="w-2/3 h-2/3 text-gray-400" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/><circle cx="12" cy="12" r="3" fill="currentColor"/>
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                    </svg>
+                </div>
+                <a href="https://www.lotame.com/resources/what-is-boolean-logic/" target="_blank" class="btn bg-green-500 hover:bg-green-600 my-4">Read more about Boolean Logic</a>
+            </div>
+
+            <!-- Slide 5: Modern Influence -->
+            <div id="slide-5" class="slide text-center flex flex-col items-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-700 mb-4">The Language of Computers</h2>
+                <p class="text-base md:text-lg text-gray-700 mb-6 max-w-2xl">In the 1930s, an engineer named Claude Shannon realized that Boolean algebra was perfect for designing electric circuits. An "on" or "off" switch could represent "true" or "false" (1 or 0). This insight is the foundation for every computer chip and microchip today, making Boole the grandfather of the digital revolution!</p>
+                <div class="w-full h-64 md:h-96 bg-gray-200 rounded-2xl flex items-center justify-center overflow-hidden mb-6">
+                    <svg class="w-2/3 h-2/3 text-gray-400" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18 4h-2V2h-2v2h-2V2h-2v2h-2V2H6v2H4c-1.1 0-1.99.9-1.99 2L2 20c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H4V8h16v12zM12 9c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 6c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/>
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                    </svg>
+                </div>
+                <a href="https://www.mathsisfun.com/sets/boolean-algebra.html" target="_blank" class="btn bg-purple-500 hover:bg-purple-600 my-4">See how Boolean logic works with examples</a>
+            </div>
+            
+            <!-- Slide 6: Conclusion -->
+            <div id="slide-6" class="slide text-center flex flex-col items-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-700 mb-4">An Enduring Legacy</h2>
+                <p class="text-base md:text-lg text-gray-700 mb-6 max-w-2xl">From the simplest calculator to the most advanced AI, the entire digital world is built on the foundation of George Boole's work. His ideas continue to shape technology and are a perfect example of how abstract thought can change the world.</p>
+                <div class="w-full h-64 md:h-96 bg-gray-200 rounded-2xl flex items-center justify-center overflow-hidden mb-6">
+                    <svg class="w-2/3 h-2/3 text-gray-400" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21 17h-1.93c-.22-.72-.44-1.48-.68-2.24-1.57-.46-3.21-1.12-4.9-2.01-.98-.53-2.02-1.09-3.11-1.65-1.07-.56-2.15-1.13-3.21-1.66-1.51-.77-3.08-1.55-4.63-2.31C2.5 7.15 2 6.55 2 5.95V4c0-1.1.9-2 2-2h16c1.1 0 2 .9 2 2v11c0 1.1-.9 2-2 2zM4 4v1.95c0 .35.2.65.51.84.44.27.9.54 1.35.81C7.8 8.87 9.8 9.94 11.9 11.1c1.1.55 2.21 1.1 3.3 1.65 1.7.89 3.34 1.55 4.9 2.01.24.76.46 1.52.68 2.24H20c.55 0 1-.45 1-1V5c0-.55-.45-1-1-1zm0 14h16v2H4z"/>
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                    </svg>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="flex justify-between w-full max-w-sm mt-8">
+            <button id="prev-button" class="btn bg-gray-400 hover:bg-gray-500">Previous</button>
+            <button id="next-button-2" class="btn bg-blue-500 hover:bg-blue-600">Next</button>
+        </div>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slides = document.querySelectorAll('.slide');
+            const prevButton = document.getElementById('prev-button');
+            const nextButton1 = document.getElementById('next-button');
+            const nextButton2 = document.getElementById('next-button-2');
+            let currentSlide = 0;
+
+            function showSlide(index) {
+                slides.forEach((slide, i) => {
+                    slide.classList.remove('active');
+                    if (i === index) {
+                        slide.classList.add('active');
+                    }
+                });
+                updateButtons(index);
+            }
+
+            function updateButtons(index) {
+                // Show/hide buttons based on the current slide
+                if (index === 0) {
+                    prevButton.classList.add('hidden');
+                } else {
+                    prevButton.classList.remove('hidden');
+                }
+
+                if (index === slides.length - 1) {
+                    nextButton1.classList.add('hidden');
+                    nextButton2.classList.add('hidden');
+                } else {
+                    nextButton1.classList.remove('hidden');
+                    nextButton2.classList.remove('hidden');
+                }
+                
+                // Only show the next button on the first slide
+                if (index === 0) {
+                    nextButton1.classList.remove('hidden');
+                    nextButton2.classList.add('hidden');
+                } else {
+                    nextButton1.classList.add('hidden');
+                    nextButton2.classList.remove('hidden');
+                }
+            }
+
+            function nextSlide() {
+                if (currentSlide < slides.length - 1) {
+                    currentSlide++;
+                    showSlide(currentSlide);
+                }
+            }
+
+            function prevSlide() {
+                if (currentSlide > 0) {
+                    currentSlide--;
+                    showSlide(currentSlide);
+                }
+            }
+
+            nextButton1.addEventListener('click', nextSlide);
+            nextButton2.addEventListener('click', nextSlide);
+            prevButton.addEventListener('click', prevSlide);
+
+            showSlide(currentSlide);
+        });
+    </script>
+
+</body>
+</html>
