@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John McCarthy: Pioneer of AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+        }
+        .slide {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .slide.active {
+            opacity: 1;
+        }
+        .slide-content {
+            background-color: white;
+            padding: 2.5rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            width: 100%;
+            height: fit-content;
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .slide-content h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1e3a8a;
+            margin-bottom: 1rem;
+        }
+        .slide-content h2 {
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: #3b82f6;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        .slide-content p {
+            font-size: 1.125rem;
+            line-height: 1.75;
+            color: #4b5563;
+        }
+        .navigation {
+            position: fixed;
+            bottom: 2rem;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+        .nav-button {
+            padding: 0.75rem 2rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            color: white;
+            background-color: #3b82f6;
+            transition: background-color 0.3s, transform 0.2s;
+            box-shadow: 0 4px 10px rgba(59, 130, 246, 0.4);
+            cursor: pointer;
+        }
+        .nav-button:hover {
+            background-color: #2563eb;
+            transform: translateY(-2px);
+        }
+        .nav-button:disabled {
+            background-color: #9ca3af;
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+        .image-container {
+            display: flex;
+            justify-content: center;
+            margin: 1.5rem 0;
+        }
+        .resource-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        .resource-button {
+            padding: 0.5rem 1rem;
+            border-radius: 0.75rem;
+            background-color: #1e3a8a;
+            color: white;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .resource-button:hover {
+            background-color: #112d64;
+            transform: translateY(-2px);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .slide-content {
+                padding: 1.5rem;
+                margin: 1rem;
+            }
+            .slide-content h1 {
+                font-size: 2rem;
+            }
+            .slide-content h2 {
+                font-size: 1.5rem;
+            }
+            .slide-content p {
+                font-size: 1rem;
+            }
+            .navigation {
+                bottom: 1rem;
+                gap: 1rem;
+            }
+            .nav-button {
+                padding: 0.75rem 1.5rem;
+            }
+            .resource-links {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+    <!-- Slide 1: Title -->
+    <div id="slide1" class="slide active">
+        <div class="slide-content">
+            <h1>John McCarthy: The Father of Artificial Intelligence</h1>
+            <p>Exploring the life and legacy of the man who gave AI its name and its foundation.</p>
+        </div>
+    </div>
+
+    <!-- Slide 2: Early Life -->
+    <div id="slide2" class="slide">
+        <div class="slide-content">
+            <h2>Early Life and Education</h2>
+            <p>John McCarthy was born on September 4, 1927. He was a mathematics prodigy, teaching himself college-level math from textbooks. This allowed him to enter Caltech at a young age, and he later earned his Ph.D. from Princeton University. </p>
+            <div class="resource-links">
+                <a href="https://www.youtube.com/watch?v=Kz6l6j5bT2c" target="_blank" class="resource-button">Watch a video about his life</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 3: Coining AI -->
+    <div id="slide3" class="slide">
+        <div class="slide-content">
+            <h2>Coining the Term "Artificial Intelligence"</h2>
+            <p>In 1955, McCarthy proposed a summer workshop at Dartmouth College. He called it the "Dartmouth Summer Research Project on Artificial Intelligence," and with that, he gave the entire field its name. This event is considered the official birth of AI as an academic discipline.</p>
+            <div class="resource-links">
+                <a href="https://en.wikipedia.org/wiki/Dartmouth_workshop" target="_blank" class="resource-button">Read about the Dartmouth Workshop</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 4: Lisp Language -->
+    <div id="slide4" class="slide">
+        <div class="slide-content">
+            <h2>The Lisp Programming Language</h2>
+            <p>McCarthy created Lisp in 1958 specifically for AI research. Lisp was designed for symbolic computing and pioneered important concepts like dynamic typing and automatic memory management (garbage collection). It became the primary language for AI research for many years.</p>
+            <div class="image-container">
+                <img src="https://placehold.co/400x200/cccccc/333333?text=Lisp+Code+Example" alt="An example of Lisp programming code." class="rounded-xl shadow-lg">
+            </div>
+            <div class="resource-links">
+                <a href="https://www.lisp.org/" target="_blank" class="resource-button">Explore the Lisp Language</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 5: Influence on Modern AI -->
+    <div id="slide5" class="slide">
+        <div class="slide-content">
+            <h2>Influence on Modern AI</h2>
+            <p>McCarthy's work continues to influence modern AI through his ideas on logical reasoning and symbolic AI. His belief that machines could reason using a set of rules laid the foundation for "expert systems." The challenge of giving machines "common sense," a problem he first explored, is still a major area of research today, tackled by modern technologies like large language models.</p>
+            <div class="resource-links">
+                <a href="https://www.wired.com/2011/10/john-mccarthy-death-2/" target="_blank" class="resource-button">Read an article about his legacy</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="navigation">
+        <button id="prevBtn" class="nav-button" disabled>Previous</button>
+        <button id="nextBtn" class="nav-button">Next</button>
+    </div>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === index) {
+                    slide.classList.add('active');
+                }
+            });
+            updateButtons();
+        }
+
+        function updateButtons() {
+            prevBtn.disabled = currentSlide === 0;
+            nextBtn.disabled = currentSlide === slides.length - 1;
+        }
+
+        nextBtn.addEventListener('click', () => {
+            if (currentSlide < slides.length - 1) {
+                currentSlide++;
+                showSlide(currentSlide);
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (currentSlide > 0) {
+                currentSlide--;
+                showSlide(currentSlide);
+            }
+        });
+
+        // Initialize the first slide
+        showSlide(currentSlide);
+    </script>
+</body>
+</html>
