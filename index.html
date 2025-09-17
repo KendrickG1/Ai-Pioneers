@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Pioneers HUD</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d1117;
+            color: #c9d1d9;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+    <div class="hud w-full max-w-5xl bg-gray-900/50 backdrop-blur-md rounded-3xl border border-gray-700/50 shadow-2xl p-6 md:p-10 flex flex-col gap-6">
+
+        <!-- Header and AI Status -->
+        <header class="flex flex-col md:flex-row justify-between items-center pb-4 border-b border-gray-700/50">
+            <h1 class="text-2xl md:text-3xl font-bold text-teal-400">PIONEER OS v2.1</h1>
+            <div class="mt-4 md:mt-0 flex items-center gap-2">
+                <span id="system-status" class="px-3 py-1 text-sm font-semibold rounded-full bg-green-500/20 text-green-400">STATUS: OPTIMAL</span>
+                <span id="ai-name" class="px-3 py-1 text-sm rounded-full bg-blue-500/20 text-blue-400">Unit ID: P-734</span>
+            </div>
+        </header>
+
+        <!-- Main Grid for Core Systems -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+            <!-- Core Systems Panel -->
+            <div class="col-span-1 flex flex-col gap-4">
+                <div class="panel bg-gray-800/50 p-4 rounded-xl border border-gray-700/50 shadow-lg">
+                    <h2 class="text-lg font-semibold mb-2 text-blue-400">CORE SYSTEMS</h2>
+                    <div class="flex flex-col gap-3">
+                        <div>
+                            <div class="flex justify-between items-center mb-1">
+                                <span class="text-sm">Energy</span>
+                                <span id="energy-value" class="text-sm font-bold text-yellow-400">100%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div id="energy-bar" class="bg-yellow-400 h-2 rounded-full transition-all duration-500" style="width: 100%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mb-1">
+                                <span class="text-sm">Processing</span>
+                                <span id="processing-value" class="text-sm font-bold text-orange-400">95%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div id="processing-bar" class="bg-orange-400 h-2 rounded-full transition-all duration-500" style="width: 95%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mb-1">
+                                <span class="text-sm">Data Storage</span>
+                                <span id="storage-value" class="text-sm font-bold text-purple-400">43%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div id="storage-bar" class="bg-purple-400 h-2 rounded-full transition-all duration-500" style="width: 43%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Display Panel -->
+            <div class="col-span-1 md:col-span-2 flex flex-col gap-4">
+                <div class="panel bg-gray-800/50 p-6 rounded-xl border border-gray-700/50 shadow-lg flex-grow">
+                    <h2 class="text-lg font-semibold mb-2 text-teal-400">LOG DISPLAY</h2>
+                    <div id="log-display" class="w-full h-48 md:h-64 bg-gray-900/50 rounded-lg p-3 text-sm overflow-y-auto font-mono text-lime-400">
+                        <span class="text-gray-500">// System Initialized. Awaiting directives...</span><br>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Resource and Navigation Panels -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Resource Inventory Panel -->
+            <div class="panel bg-gray-800/50 p-4 rounded-xl border border-gray-700/50 shadow-lg">
+                <h2 class="text-lg font-semibold mb-2 text-green-400">RESOURCE INVENTORY</h2>
+                <div id="resource-list" class="flex flex-col gap-2">
+                    <div class="flex justify-between items-center text-sm">
+                        <span><span class="font-semibold text-lime-300">Biomass</span> Fragments</span>
+                        <span class="text-gray-400">x<span id="biomass-count" class="font-bold text-lime-300 ml-1">54</span></span>
+                    </div>
+                    <div class="flex justify-between items-center text-sm">
+                        <span><span class="font-semibold text-cyan-300">Mineral</span> Deposits</span>
+                        <span class="text-gray-400">x<span id="mineral-count" class="font-bold text-cyan-300 ml-1">12</span></span>
+                    </div>
+                    <div class="flex justify-between items-center text-sm">
+                        <span><span class="font-semibold text-red-300">Energy</span> Crystals</span>
+                        <span class="text-gray-400">x<span id="crystal-count" class="font-bold text-red-300 ml-1">3</span></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Panel -->
+            <div class="panel bg-gray-800/50 p-4 rounded-xl border border-gray-700/50 shadow-lg">
+                <h2 class="text-lg font-semibold mb-2 text-pink-400">NAVIGATION</h2>
+                <div class="flex flex-col gap-2 text-sm">
+                    <div class="flex justify-between">
+                        <span class="text-gray-400">LAT:</span>
+                        <span id="lat-value" class="font-bold text-pink-300">40.7128°N</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-gray-400">LONG:</span>
+                        <span id="long-value" class="font-bold text-pink-300">-74.0060°W</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-gray-400">ALT:</span>
+                        <span id="alt-value" class="font-bold text-pink-300">120.5m</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pioneer Roster Menu -->
+        <div class="panel bg-gray-800/50 p-4 rounded-xl border border-gray-700/50 shadow-lg mt-6">
+            <h2 class="text-lg font-semibold mb-4 text-orange-400">PIONEER ROSTER</h2>
+            <div id="pioneer-menu" class="flex flex-wrap justify-center md:justify-start gap-6">
+
+                <!-- Pioneer Card 1 -->
+                <div class="flex flex-col items-center gap-2 p-2 rounded-lg transition-transform transform hover:scale-105 hover:bg-gray-700/50 cursor-pointer">
+                    <img src="https://placehold.co/100x100/38bdf8/0369a1?text=AI-01" alt="AI Pioneer 01" class="w-20 h-20 rounded-full border-2 border-cyan-400 shadow-md">
+                    <span class="text-sm font-semibold text-cyan-200">Unit: P-734</span>
+                </div>
+
+                <!-- Pioneer Card 2 -->
+                <div class="flex flex-col items-center gap-2 p-2 rounded-lg transition-transform transform hover:scale-105 hover:bg-gray-700/50 cursor-pointer">
+                    <img src="https://placehold.co/100x100/f87171/dc2626?text=AI-02" alt="AI Pioneer 02" class="w-20 h-20 rounded-full border-2 border-rose-400 shadow-md">
+                    <span class="text-sm font-semibold text-rose-200">Unit: A-889</span>
+                </div>
+
+                <!-- Pioneer Card 3 -->
+                <div class="flex flex-col items-center gap-2 p-2 rounded-lg transition-transform transform hover:scale-105 hover:bg-gray-700/50 cursor-pointer">
+                    <img src="https://placehold.co/100x100/fbbf24/92400e?text=AI-03" alt="AI Pioneer 03" class="w-20 h-20 rounded-full border-2 border-amber-400 shadow-md">
+                    <span class="text-sm font-semibold text-amber-200">Unit: B-457</span>
+                </div>
+
+                <!-- Pioneer Card 4 -->
+                <div class="flex flex-col items-center gap-2 p-2 rounded-lg transition-transform transform hover:scale-105 hover:bg-gray-700/50 cursor-pointer">
+                    <img src="https://placehold.co/100x100/a78bfa/5b21b6?text=AI-04" alt="AI Pioneer 04" class="w-20 h-20 rounded-full border-2 border-violet-400 shadow-md">
+                    <span class="text-sm font-semibold text-violet-200">Unit: S-112</span>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // JavaScript for dynamic updates and simulated data.
+        const logDisplay = document.getElementById('log-display');
+
+        const state = {
+            energy: 100,
+            processing: 95,
+            storage: 43,
+            biomass: 54,
+            mineral: 12,
+            crystal: 3,
+            lat: 40.7128,
+            long: -74.0060,
+            alt: 120.5
+        };
+
+        const updateHUD = () => {
+            // Update Core System bars and values
+            document.getElementById('energy-value').textContent = `${state.energy.toFixed(1)}%`;
+            document.getElementById('energy-bar').style.width = `${state.energy.toFixed(1)}%`;
+            document.getElementById('processing-value').textContent = `${state.processing.toFixed(1)}%`;
+            document.getElementById('processing-bar').style.width = `${state.processing.toFixed(1)}%`;
+            document.getElementById('storage-value').textContent = `${state.storage.toFixed(1)}%`;
+            document.getElementById('storage-bar').style.width = `${state.storage.toFixed(1)}%`;
+
+            // Update Resource counts
+            document.getElementById('biomass-count').textContent = state.biomass;
+            document.getElementById('mineral-count').textContent = state.mineral;
+            document.getElementById('crystal-count').textContent = state.crystal;
+
+            // Update Navigation
+            document.getElementById('lat-value').textContent = `${state.lat.toFixed(4)}°N`;
+            document.getElementById('long-value').textContent = `${state.long.toFixed(4)}°W`;
+            document.getElementById('alt-value').textContent = `${state.alt.toFixed(1)}m`;
+        };
+
+        const addLogEntry = (message) => {
+            const entry = document.createElement('span');
+            entry.className = 'text-gray-400 mb-1';
+            entry.innerHTML = `[${new Date().toLocaleTimeString()}] <span class="text-lime-400">${message}</span><br>`;
+            logDisplay.appendChild(entry);
+            logDisplay.scrollTop = logDisplay.scrollHeight;
+        };
+
+        // Simulate data changes
+        const simulateData = () => {
+            // Randomly decrease energy and processing
+            state.energy = Math.max(0, state.energy - Math.random() * 2);
+            state.processing = Math.max(0, state.processing - Math.random() * 3);
+
+            // Randomly add resources and log
+            if (Math.random() < 0.3) {
+                const newBiomass = Math.floor(Math.random() * 5);
+                state.biomass += newBiomass;
+                if (newBiomass > 0) addLogEntry(`+${newBiomass} BIOMASS FRAGMENTS detected.`);
+            }
+            if (Math.random() < 0.1) {
+                const newMineral = Math.floor(Math.random() * 2);
+                state.mineral += newMineral;
+                if (newMineral > 0) addLogEntry(`+${newMineral} MINERAL DEPOSITS acquired.`);
+            }
+
+            // Simulate location change
+            state.lat += (Math.random() - 0.5) * 0.001;
+            state.long += (Math.random() - 0.5) * 0.001;
+            state.alt += (Math.random() - 0.5) * 0.1;
+
+            updateHUD();
+        };
+
+        // Initialize and start simulation
+        updateHUD();
+        setInterval(simulateData, 1500);
+
+        // Add initial log entry
+        addLogEntry("SYSTEM DIAGNOSTICS: All systems nominal. AI Core online.");
+    </script>
+</body>
+</html>
