@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Website Home</title>
-    <!-- Tailwind CSS from CDN -->
+    <title>Your Website - Home</title>
+    <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Use Inter font from Google Fonts -->
+    <!-- Google Fonts - Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -14,108 +14,283 @@
         body {
             font-family: 'Inter', sans-serif;
         }
-        /* Custom styles can go here if needed */
-        .card {
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-        }
     </style>
 </head>
-<body class="bg-black text-gray-50">
+<body class="bg-black text-white">
 
-    <!-- Header & Navigation Bar -->
-    <header class="bg-gray-800 sticky top-0 z-50 shadow-md">
-        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-indigo-400"></a>
-            <div class="hidden md:flex space-x-6">
-                <a href="#" class="text-gray-400 hover:text-indigo-600 transition duration-300">Home</a>
-                <a href="#" class="text-gray-400 hover:text-indigo-600 transition duration-300">About</a>
-                <a href="#" class="text-gray-400 hover:text-indigo-600 transition duration-300">Services</a>
-                <a href="#" class="text-gray-400 hover:text-indigo-600 transition duration-300">Contact</a>
-            </div>
+    <!-- Header & Navigation -->
+    <header class="bg-gray-800 shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-white" aria-label="Home"></a>
+            <nav class="hidden md:flex space-x-6">
+                <a href="#services" class="text-gray-300 hover:text-white transition-colors duration-300">Services</a>
+                <a href="#contact" class="text-gray-300 hover:text-white transition-colors duration-300">Contact</a>
+            </nav>
             <!-- Mobile Menu Button -->
-            <button id="mobile-menu-button" class="md:hidden p-2 text-gray-600 hover:text-indigo-600 transition duration-300 rounded-md">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <button class="md:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-700" id="menu-button">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
                 </svg>
             </button>
-        </nav>
-
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-gray-800 text-center">
-            <a href="#" class="block py-2 px-4 text-gray-600 hover:bg-gray-700">Home</a>
-            <a href="#" class="block py-2 px-4 text-gray-600 hover:bg-gray-700">About</a>
-            <a href="#" class="block py-2 px-4 text-gray-600 hover:bg-gray-700">Services</a>
-            <a href="#" class="block py-2 px-4 text-gray-600 hover:bg-gray-700">Contact</a>
+        </div>
+        <!-- Mobile Menu (Hidden by default) -->
+        <div class="md:hidden bg-gray-800 shadow-lg" id="mobile-menu" style="display: none;">
+            <a href="#services" class="block py-3 px-4 text-gray-300 hover:bg-gray-800 transition-colors duration-300">Services</a>
+            <a href="#contact" class="block py-3 px-4 text-gray-300 hover:bg-gray-800 transition-colors duration-300">Contact</a>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <main class="container mx-auto px-4 py-16 md:py-32">
-        <section class="text-center">
-            <h1 class="text-4xl md:text-6xl font-extrabold text-indigo-400 mb-4 leading-tight">The Pioneers of Artificial Intelligence</h1>
-        </section>
+    <section class="bg-gray-900 py-20 md:py-32 text-center" id="hero">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4">
+                The Pioneers of Artificial Intelligence
+            </h1>
+            <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                A pioneer of Artificial Intelligence (AI) is someone who laid the groundwork for the field by introducing key ideas, theories, or technologies that shaped how machines can simulate human intelligence. For example, Alan Turing proposed the concept of a “universal machine” and created the Turing Test to measure machine intelligence, while John McCarthy coined the term “Artificial Intelligence” in 1956 and Marvin Minsky developed early AI programs. Their contributions established the foundations that modern AI systems still build upon today.
+            </p>
+            <a href="#contact" class="inline-block bg-blue-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-blue-500 transition-colors duration-300">
+                Get Started
+            </a>
+        </div>
+    </section>
 
-        <!-- Features Section -->
-        <section class="mt-20">
-            <p class="text-center text-lg text-gray-400 mb-12 max-w-4xl mx-auto">A pioneer of Artificial Intelligence (AI) is someone who laid the groundwork for the field by introducing key ideas, theories, or technologies that shaped how machines can simulate human intelligence. For example, Alan Turing proposed the concept of a “universal machine” and created the Turing Test to measure machine intelligence, while John McCarthy coined the term “Artificial Intelligence” in 1956 and Marvin Minsky developed early AI programs. Their contributions established the foundations that modern AI systems still build upon today.</p>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Feature Card 1 -->
-                <div class="card bg-gray-800 p-6 rounded-xl text-center transition duration-300 hover:scale-105">
-                    <img src="https://placehold.co/48x48/A5B4FC/4338CA?text=Icon" alt="Feature Icon 1" class="mx-auto mb-4 rounded-full h-12 w-12">
-                    <a href="#" class="mt-4 inline-block bg-indigo-600 text-white py-2 px-4 rounded-full transition duration-300 hover:bg-indigo-700">Explore Legacy</a>
+    <!-- Services/Features Section -->
+    <section class="bg-gray-950 py-16 md:py-24" id="services">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-12">
+                Our Services
+            </h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service Card 1 -->
+                <div class="bg-gray-800 p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center">
+                    <div class="mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L12 14.75m0 0l2.25-2.25M12 14.75V3m0 0a9 9 0 110 18A9 9 0 0112 3z" />
+                        </svg>
+                    </div>
+                    <p class="text-gray-400 text-sm mb-2">1927-2011</p>
+                    <button class="inline-block bg-blue-600 text-white font-semibold py-2 px-6 rounded-full shadow-lg hover:bg-blue-500 transition-colors duration-300">
+                        Explore Legacy
+                    </button>
                 </div>
-                <!-- Feature Card 2 -->
-                <div class="card bg-gray-800 p-6 rounded-xl text-center transition duration-300 hover:scale-105">
-                    <img src="https://placehold.co/48x48/C7D2FE/4338CA?text=Icon" alt="Feature Icon 2" class="mx-auto mb-4 rounded-full h-12 w-12">
-                    <a href="#" class="mt-4 inline-block bg-indigo-600 text-white py-2 px-4 rounded-full transition duration-300 hover:bg-indigo-700">Explore Legacy</a>
+                <!-- Service Card 2 -->
+                <div class="bg-gray-800 p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center">
+                    <div class="mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                    </div>
+                    <button class="inline-block bg-blue-600 text-white font-semibold py-2 px-6 rounded-full shadow-lg hover:bg-blue-500 transition-colors duration-300">
+                        Explore Legacy
+                    </button>
                 </div>
-                <!-- Feature Card 3 -->
-                <div class="card bg-gray-800 p-6 rounded-xl text-center transition duration-300 hover:scale-105">
-                    <img src="https://placehold.co/48x48/C7D2FE/4338CA?text=Icon" alt="Feature Icon 3" class="mx-auto mb-4 rounded-full h-12 w-12">
-                    <a href="#" class="mt-4 inline-block bg-indigo-600 text-white py-2 px-4 rounded-full transition duration-300 hover:bg-indigo-700">Explore Legacy</a>
+                <!-- Service Card 3 -->
+                <div class="bg-gray-800 p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center">
+                    <div class="mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <button class="inline-block bg-blue-600 text-white font-semibold py-2 px-6 rounded-full shadow-lg hover:bg-blue-500 transition-colors duration-300">
+                        Explore Legacy
+                    </button>
                 </div>
-                <!-- Feature Card 4 -->
-                <div class="card bg-gray-800 p-6 rounded-xl text-center transition duration-300 hover:scale-105">
-                    <img src="https://placehold.co/48x48/A5B4FC/4338CA?text=Icon" alt="Feature Icon 4" class="mx-auto mb-4 rounded-full h-12 w-12">
-                    <a href="#" class="mt-4 inline-block bg-indigo-600 text-white py-2 px-4 rounded-full transition duration-300 hover:bg-indigo-700">Explore Legacy</a>
+                <!-- Service Card 4 -->
+                <div class="bg-gray-800 p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center">
+                    <div class="mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16L2 12l4-4" />
+                        </svg>
+                    </div>
+                    <button class="inline-block bg-blue-600 text-white font-semibold py-2 px-6 rounded-full shadow-lg hover:bg-blue-500 transition-colors duration-300">
+                        Explore Legacy
+                    </button>
                 </div>
-                <!-- Feature Card 5 -->
-                <div class="card bg-gray-800 p-6 rounded-xl text-center transition duration-300 hover:scale-105">
-                    <img src="https://placehold.co/48x48/A5B4FC/4338CA?text=Icon" alt="Feature Icon 5" class="mx-auto mb-4 rounded-full h-12 w-12">
-                    <a href="#" class="mt-4 inline-block bg-indigo-600 text-white py-2 px-4 rounded-full transition duration-300 hover:bg-indigo-700">Explore Legacy</a>
+                <!-- Service Card 5 -->
+                <div class="bg-gray-800 p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center">
+                    <div class="mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16L2 12l4-4" />
+                        </svg>
+                    </div>
+                    <button class="inline-block bg-blue-600 text-white font-semibold py-2 px-6 rounded-full shadow-lg hover:bg-blue-500 transition-colors duration-300">
+                        Explore Legacy
+                    </button>
                 </div>
-                <!-- Feature Card 6 -->
-                <div class="card bg-gray-800 p-6 rounded-xl text-center transition duration-300 hover:scale-105">
-                    <img src="https://placehold.co/48x48/C7D2FE/4338CA?text=Icon" alt="Feature Icon 6" class="mx-auto mb-4 rounded-full h-12 w-12">
-                    <a href="#" class="mt-4 inline-block bg-indigo-600 text-white py-2 px-4 rounded-full transition duration-300 hover:bg-indigo-700">Explore Legacy</a>
+                <!-- Service Card 6 -->
+                <div class="bg-gray-800 p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center">
+                    <div class="mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                    </div>
+                    <button class="inline-block bg-blue-600 text-white font-semibold py-2 px-6 rounded-full shadow-lg hover:bg-blue-500 transition-colors duration-300">
+                        Explore Legacy
+                    </button>
                 </div>
-                <!-- Feature Card 7 -->
-                <div class="card bg-gray-800 p-6 rounded-xl text-center transition duration-300 hover:scale-105">
-                    <img src="https://placehold.co/48x48/C7D2FE/4338CA?text=Icon" alt="Feature Icon 7" class="mx-auto mb-4 rounded-full h-12 w-12">
-                    <a href="#" class="mt-4 inline-block bg-indigo-600 text-white py-2 px-4 rounded-full transition duration-300 hover:bg-indigo-700">Explore Legacy</a>
+                <!-- Service Card 7 -->
+                <div class="bg-gray-800 p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center">
+                    <div class="mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <button class="inline-block bg-blue-600 text-white font-semibold py-2 px-6 rounded-full shadow-lg hover:bg-blue-500 transition-colors duration-300">
+                        Explore Legacy
+                    </button>
                 </div>
-                <!-- Feature Card 8 -->
-                <div class="card bg-gray-800 p-6 rounded-xl text-center transition duration-300 hover:scale-105">
-                    <img src="https://placehold.co/48x48/A5B4FC/4338CA?text=Icon" alt="Feature Icon 8" class="mx-auto mb-4 rounded-full h-12 w-12">
-                    <a href="#" class="mt-4 inline-block bg-indigo-600 text-white py-2 px-4 rounded-full transition duration-300 hover:bg-indigo-700">Explore Legacy</a>
+                <!-- Service Card 8 -->
+                <div class="bg-gray-800 p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center">
+                    <div class="mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L12 14.75m0 0l2.25-2.25M12 14.75V3m0 0a9 9 0 110 18A9 9 0 0112 3z" />
+                        </svg>
+                    </div>
+                    <button class="inline-block bg-blue-600 text-white font-semibold py-2 px-6 rounded-full shadow-lg hover:bg-blue-500 transition-colors duration-300">
+                        Explore Legacy
+                    </button>
                 </div>
-                <!-- Feature Card 9 -->
-                <div class="card bg-gray-800 p-6 rounded-xl text-center transition duration-300 hover:scale-105">
-                    <img src="https://placehold.co/48x48/A5B4FC/4338CA?text=Icon" alt="Feature Icon 9" class="mx-auto mb-4 rounded-full h-12 w-12">
-                    <a href="#" class="mt-4 inline-block bg-indigo-600 text-white py-2 px-4 rounded-full transition duration-300 hover:bg-indigo-700">Explore Legacy</a>
+                <!-- Service Card 9 -->
+                <div class="bg-gray-800 p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center">
+                    <div class="mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16L2 12l4-4" />
+                        </svg>
+                    </div>
+                    <button class="inline-block bg-blue-600 text-white font-semibold py-2 px-6 rounded-full shadow-lg hover:bg-blue-500 transition-colors duration-300">
+                        Explore Legacy
+                    </button>
                 </div>
-                <!-- Feature Card 10 -->
-                <div class="card bg-gray-800 p-6 rounded-xl text-center transition duration-300 hover:scale-105">
-                    <img src="https://placehold.co/48x48/C7D2FE/4338CA?text=Icon" alt="Feature Icon 10" class="mx-auto mb-4 rounded-full h-12 w-12">
-                    <a href="#" class="mt-4 inline-block bg-indigo-600 text-white py-2 px-4 rounded-full transition duration-300 hover:bg-indigo-700">Explore Legacy</a>
+                <!-- Service Card 10 -->
+                <div class="bg-gray-800 p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center">
+                    <div class="mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                    </div>
+                    <button class="inline-block bg-blue-600 text-white font-semibold py-2 px-6 rounded-full shadow-lg hover:bg-blue-500 transition-colors duration-300">
+                        Explore Legacy
+                    </button>
                 </div>
-                <!-- Feature Card 11 -->
-                <div class="card bg-gray-800 p-6 rounded-xl text-center transition duration-300 hover:scale-105">
-                    <img src="https://placehold.co/48x48/C7D2FE/4338CA?text=Icon" alt="Feature Icon 11" class="mx-auto mb-4 rounded-full h-12 w-12">
-                    <a href="#" class="mt-4 inline-block bg-indigo-600 text-white py-2 px-4 rounded-full transition duration-300 hover:bg-indigo-700">Explore Legacy</a>
+                <!-- Service Card 11 -->
+                <div class="bg-gray-800 p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center">
+                    <div class="mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <button class="inline-block bg-blue-600 text-white font-semibold py-2 px-6 rounded-full shadow-lg hover:bg-blue-500 transition-colors duration-300">
+                        Explore Legacy
+                    </button>
                 </div>
-                <!-- Feature Card 12 -->
-                <div class="card bg-gray-800 p-6 rounded-xl text-center transition duration-300 hover:scale-105">
-                    <img src="https://placehold.co/48x48/A5B4FC/4338CA?text=Icon" alt="Feature Icon 12" class="mx-auto mb-4 rounded-full h-12 w-12">
-                    <a href="#" class="mt-4 inline-block bg-indigo-600 text-white py-2 px-4 rounded-full transition duration
+                <!-- Service Card 12 -->
+                <div class="bg-gray-800 p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center">
+                    <div class="mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L12 14.75m0 0l2.25-2.25M12 14.75V3m0 0a9 9 0 110 18A9 9 0 0112 3z" />
+                        </svg>
+                    </div>
+                    <button class="inline-block bg-blue-600 text-white font-semibold py-2 px-6 rounded-full shadow-lg hover:bg-blue-500 transition-colors duration-300">
+                        Explore Legacy
+                    </button>
+                </div>
+                <!-- Service Card 13 -->
+                <div class="bg-gray-800 p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center">
+                    <div class="mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                    </div>
+                    <button class="inline-block bg-blue-600 text-white font-semibold py-2 px-6 rounded-full shadow-lg hover:bg-blue-500 transition-colors duration-300">
+                        Explore Legacy
+                    </button>
+                </div>
+                <!-- Service Card 14 -->
+                <div class="bg-gray-800 p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center">
+                    <div class="mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <button class="inline-block bg-blue-600 text-white font-semibold py-2 px-6 rounded-full shadow-lg hover:bg-blue-500 transition-colors duration-300">
+                        Explore Legacy
+                    </button>
+                </div>
+                <!-- Service Card 15 -->
+                <div class="bg-gray-800 p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center">
+                    <div class="mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16L2 12l4-4" />
+                        </svg>
+                    </div>
+                    <button class="inline-block bg-blue-600 text-white font-semibold py-2 px-6 rounded-full shadow-lg hover:bg-blue-500 transition-colors duration-300">
+                        Explore Legacy
+                    </button>
+                </div>
+                <!-- Service Card 16 -->
+                <div class="bg-gray-800 p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center">
+                    <div class="mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L12 14.75m0 0l2.25-2.25M12 14.75V3m0 0a9 9 0 110 18A9 9 0 0112 3z" />
+                        </svg>
+                    </div>
+                    <button class="inline-block bg-blue-600 text-white font-semibold py-2 px-6 rounded-full shadow-lg hover:bg-blue-500 transition-colors duration-300">
+                        Explore Legacy
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Contact Section -->
+    <section class="py-16 md:py-24" id="contact">
+        <div class="container mx-auto px-4 text-center max-w-3xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+                Get in Touch
+            </h2>
+            <p class="text-gray-300 mb-8">
+                Have a question or a project in mind? We'd love to hear from you.
+            </p>
+            <div class="bg-gray-900 p-8 rounded-lg shadow-md">
+                <form>
+                    <div class="grid sm:grid-cols-2 gap-6 mb-6">
+                        <input type="text" placeholder="Your Name" class="p-3 w-full rounded-md border border-gray-700 bg-gray-900 text-white placeholder-gray-500 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200">
+                        <input type="email" placeholder="Your Email" class="p-3 w-full rounded-md border border-gray-700 bg-gray-900 text-white placeholder-gray-500 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200">
+                    </div>
+                    <textarea placeholder="Your Message" rows="6" class="p-3 w-full rounded-md border border-gray-700 bg-gray-900 text-white placeholder-gray-500 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 mb-6"></textarea>
+                    <button type="submit" class="w-full bg-blue-600 text-white font-semibold py-3 px-6 rounded-md shadow-lg hover:bg-blue-500 transition-colors duration-300">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 text-white py-10">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-sm">
+                &copy; 2024 Your Website. All Rights Reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        const menuButton = document.getElementById('menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuButton.addEventListener('click', () => {
+            mobileMenu.style.display = mobileMenu.style.display === 'none' ? 'block' : 'none';
+        });
+
+        // Close mobile menu when a link is clicked
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.style.display = 'none';
+            });
+        });
+    </script>
+</body>
+</html>
